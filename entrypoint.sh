@@ -23,6 +23,6 @@ fi
 
 git clone https://github.com/Motion-Project/motion-packaging
 cd motion-packaging
-./builddeb.sh Motion-Project tosiara@users.noreply.github.com "$VERSION"
+./builddeb.sh Motion-Project "$EMAIL" "$VERSION"
 cp *.deb /debs/
 
