@@ -4,20 +4,18 @@ Docker script to build multiple motion releases
 
 # Supported platforms
 
-## amd64
-
 * ubuntu:xenial
 * ubuntu:bionic
 * ubuntu:focal
 * debian:stretch
 * debian:buster
 
-## i386
+# Supported archinectures
  
- * i386/ubuntu:xenial
- * i386/ubuntu:bionic
- * i386/debian:stretch
- * i386/debian:buster
+ * amd64
+ * i386
+ * arm64v8
+ * arm32v7
   
  # Not supported
  
