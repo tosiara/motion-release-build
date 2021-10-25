@@ -9,6 +9,7 @@ Docker script to build multiple motion releases
 * ubuntu:focal
 * debian:stretch
 * debian:buster
+* debian:bullseye
 
 # Supported archinectures
  
@@ -16,6 +17,7 @@ Docker script to build multiple motion releases
  * i386
  * arm64v8
  * arm32v7
+ * arm32v5
   
  # Not supported
  

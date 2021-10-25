@@ -9,6 +9,10 @@ if [[ "$PLATFORM" == *ubuntu:xenial ]]
 then
 	apt-get install -y libmysqlclient-dev
 
+elif [[ "$PLATFORM" == *debian:bullseye ]]
+then
+        apt-get install -y libmariadb-dev
+
 elif [ "$PLATFORM" == "i386/ubuntu:focal" ]
 then
 
@@ -16,7 +20,6 @@ then
 	echo "Only mariadb is supported on Ubuntu Focal i386"
 	echo "See https://github.com/Motion-Project/motion-packaging/issues/13#issuecomment-596222102"
 	exit 1
-
 else
 	apt-get install -y libmariadbclient-dev
 fi
