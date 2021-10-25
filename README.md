@@ -22,4 +22,9 @@ Docker script to build multiple motion releases
  # Not supported
  
  * i386/ubuntu:focal - libmariadbclient-dev not available
- 
+ * arm64v8/debian:bullseye - instaling libmariadb-dev crashes the docker image
+ ```
+ Processing triggers for libc-bin (2.31-13+deb11u2) ...
+ qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+ ```
+
