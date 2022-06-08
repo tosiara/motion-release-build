@@ -4,6 +4,7 @@ Docker script to build multiple motion releases
 
 # Supported platforms
 
+* ubuntu:jammy
 * ubuntu:xenial
 * ubuntu:bionic
 * ubuntu:focal
