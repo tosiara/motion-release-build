@@ -2,13 +2,13 @@
 
 arch="amd64 i386 arm64v8 arm32v7 arm32v5"
 
-platforms="ubuntu:xenial ubuntu:bionic ubuntu:focal debian:stretch debian:buster debian:bullseye"
+platforms="ubuntu:xenial ubuntu:bionic ubuntu:focal debian:stretch debian:buster debian:bullseye debian:bookworm"
 # Currently build script does not support i386/ubuntu:focal because of missing libmariadbclient-dev
 # also arm64v8/debian:bullseye causes qemu segfault during mysql lib install
 
 email="tosiara@users.noreply.github.com"
-LOCAL="/home/motion/motion-release-build"
-v="4.4"
+LOCAL="$PWD"
+v="4.6"
 
 # otherwise you will get exec format error
 apt-get install qemu binfmt-support qemu-user-static
