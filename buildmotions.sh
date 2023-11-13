@@ -2,7 +2,7 @@
 
 arch="amd64 i386 arm64v8 arm32v7 arm32v5"
 
-platforms="ubuntu:xenial ubuntu:bionic ubuntu:focal debian:stretch debian:buster debian:bullseye debian:bookworm"
+platforms="ubuntu:xenial ubuntu:bionic ubuntu:focal ubuntu:jammy debian:stretch debian:buster debian:bullseye debian:bookworm"
 # Currently build script does not support i386/ubuntu:focal because of missing libmariadbclient-dev
 # also arm64v8/debian:bullseye causes qemu segfault during mysql lib install
 
