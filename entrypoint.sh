@@ -9,7 +9,7 @@ if [[ "$PLATFORM" == *ubuntu:xenial ]]
 then
 	apt-get install -y libmysqlclient-dev
 
-elif [[ "$PLATFORM" == *debian:bullseye ]] || [[ "$PLATFORM" == *ubuntu:jammy ]] || [[ "$PLATFORM" == *debian:bookworm ]]
+elif [[ "$PLATFORM" == *ubuntu:jammy ]] || [[ "$PLATFORM" == *ubuntu:noble ]] || [[ "$PLATFORM" == *debian:bullseye ]] || [[ "$PLATFORM" == *debian:bookworm ]]
 then
         apt-get install -y libmariadb-dev
 
