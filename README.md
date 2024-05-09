@@ -4,6 +4,7 @@ Docker script to build multiple motion releases
 
 # Supported platforms
 
+* ubuntu:noble
 * ubuntu:jammy
 * ubuntu:xenial
 * ubuntu:bionic
@@ -11,6 +12,7 @@ Docker script to build multiple motion releases
 * debian:stretch
 * debian:buster
 * debian:bullseye
+* debian:bookworm
 
 # Supported archinectures
  
