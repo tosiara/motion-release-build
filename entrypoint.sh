@@ -26,7 +26,7 @@ fi
 
 if [[ "$PLATFORM" == *debian:bookworm ]] || [[ "$PLATFORM" == *debian:trixie ]]
 then
-	apt-get install  libcamera-tools libcamera-dev libcamera-v4l2
+	apt-get install -y libcamera-tools libcamera-dev libcamera-v4l2
 fi
 
 git clone https://github.com/Motion-Project/motion-packaging

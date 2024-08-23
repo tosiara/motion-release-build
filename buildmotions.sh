@@ -10,7 +10,7 @@ LOCAL="$PWD"
 v="4.7"
 
 # otherwise you will get exec format error
-apt-get install qemu binfmt-support qemu-user-static
+apt-get install -y qemu binfmt-support qemu-user-static
 
 for p in $platforms
 do
