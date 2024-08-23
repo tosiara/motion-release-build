@@ -9,7 +9,7 @@ if [[ "$PLATFORM" == *ubuntu:xenial ]]
 then
 	apt-get install -y libmysqlclient-dev
 
-elif [[ "$PLATFORM" == *ubuntu:jammy ]] || [[ "$PLATFORM" == *ubuntu:noble ]] || [[ "$PLATFORM" == *debian:bullseye ]] || [[ "$PLATFORM" == *debian:bookworm ]]
+elif [[ "$PLATFORM" == *ubuntu:jammy ]] || [[ "$PLATFORM" == *ubuntu:noble ]] || [[ "$PLATFORM" == *debian:bullseye ]] || [[ "$PLATFORM" == *debian:bookworm ]] || [[ "$PLATFORM" == *debian:trixie ]]
 then
         apt-get install -y libmariadb-dev
 
@@ -22,6 +22,11 @@ then
 	exit 1
 else
 	apt-get install -y libmariadbclient-dev
+fi
+
+if [[ "$PLATFORM" == *debian:bookworm ]] || [[ "$PLATFORM" == *debian:trixie ]]
+then
+	apt-get install  libcamera-tools libcamera-dev libcamera-v4l2
 fi
 
 git clone https://github.com/Motion-Project/motion-packaging
