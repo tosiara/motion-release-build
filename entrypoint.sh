@@ -29,7 +29,7 @@ then
 	apt-get install -y libcamera-tools libcamera-dev libcamera-v4l2
 fi
 
-git clone https://github.com/Motion-Project/motion-packaging
+git clone https://github.com/tosiara/motion-packaging
 cd motion-packaging
 ./builddeb.sh Motion-Project "$EMAIL" "$VERSION"
 cp *.deb /debs/
