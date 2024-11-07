@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  VERSION: 4.7.0
+  VERSION: 4.7
 
 jobs:
   build_amd64_ubuntu_noble:
