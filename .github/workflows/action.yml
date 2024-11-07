@@ -15,7 +15,7 @@ env:
 jobs:
   amd64_ubuntu_noble:
     runs-on: ubuntu-24.04
-    container: ubuntu:noble
+    container: amd64/ubuntu:noble
     env:
       PLATFORM: amd64/ubuntu:noble
     steps:
@@ -49,7 +49,7 @@ jobs:
           
   amd64_ubuntu_jammy:
     runs-on: ubuntu-22.04
-    container: ubuntu:jammy
+    container: amd64/ubuntu:jammy
     env:
       PLATFORM: amd64/ubuntu:jammy
     steps:
