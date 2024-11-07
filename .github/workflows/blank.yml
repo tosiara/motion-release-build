@@ -20,5 +20,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: entrypoint.sh
         run: |
-             mkdir /debs
+             sudo mkdir /debs
              sudo -E ./entrypoint.sh
