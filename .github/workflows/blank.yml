@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
-        run: sudo ./entrypoint.sh
+        run: VERSION="4.7.0" PLATFORM="amd64/ubuntu:noble" sudo ./entrypoint.sh
