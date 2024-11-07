@@ -13,7 +13,7 @@ env:
   EMAIL: tosiara@users.noreply.github.com
 
 jobs:
-  build_amd64_ubuntu_noble:
+  amd64_ubuntu_noble:
     runs-on: ubuntu-24.04
     container: ubuntu:noble
     env:
@@ -27,10 +27,10 @@ jobs:
       - name: Save deb
         uses: actions/upload-artifact@v4
         with:
-          name: deb
+          name: ubuntu_noble
           path: /debs/*.deb
 
-  build_amd64_ubuntu_jammy:
+  amd64_ubuntu_jammy:
     runs-on: ubuntu-22.04
     container: ubuntu:jammy
     env:
@@ -44,5 +44,5 @@ jobs:
       - name: Save deb
         uses: actions/upload-artifact@v4
         with:
-          name: deb
+          name: ubuntu_jammy
           path: /debs/*.deb
