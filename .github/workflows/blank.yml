@@ -10,7 +10,7 @@ on:
 
 jobs:
   build_amd64_ubuntu_jammy:
-    runs-on: ubuntu-jammy
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
