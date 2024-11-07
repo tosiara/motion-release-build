@@ -29,3 +29,20 @@ jobs:
         with:
           name: deb
           path: /debs/*.deb
+
+  build_amd64_ubuntu_jammy:
+    runs-on: ubuntu-22.04
+    container: ubuntu:jammy
+    env:
+      PLATFORM: amd64/ubuntu:jammy
+    steps:
+      - uses: actions/checkout@v4
+      - name: entrypoint.sh
+        run: |
+             mkdir /debs
+             ./entrypoint.sh
+      - name: Save deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb
+          path: /debs/*.deb
