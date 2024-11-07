@@ -22,3 +22,8 @@ jobs:
         run: |
              sudo mkdir /debs
              sudo -E ./entrypoint.sh
+      - name: Save deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb
+          path: /debs/*.deb
