@@ -9,12 +9,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_amd64_ubuntu_jammy:
+  build_amd64_ubuntu_noble:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
         run: |
           export VERSION="4.7.0"
-          export PLATFORM="amd64/ubuntu-jammy"
+          export PLATFORM="amd64/ubuntu:noble"
           sudo ./entrypoint.sh
