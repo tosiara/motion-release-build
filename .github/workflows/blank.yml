@@ -9,14 +9,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_amd64:
-    runs-on: ubuntu-latest
-
+  build_amd64_ubuntu_jammy:
+    runs-on: ubuntu-jammy
     steps:
       - uses: actions/checkout@v4
-
       - name: Run a multi-line script
         run: |
           export VERSION="4.7.0"
-          export PLATFORM="amd64/debian:bookworm"
+          export PLATFORM="amd64/ubuntu-jammy"
           sudo ./entrypoint.sh
