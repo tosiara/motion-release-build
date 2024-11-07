@@ -19,4 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: entrypoint.sh
-        run: sudo -E ./entrypoint.sh
+        run: |
+             mkdir /debs
+             sudo -E ./entrypoint.sh
