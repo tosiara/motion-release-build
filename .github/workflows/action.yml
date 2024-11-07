@@ -10,6 +10,7 @@ on:
 
 env:
   VERSION: 4.7
+  EMAIL: tosiara@users.noreply.github.com
 
 jobs:
   build_amd64_ubuntu_noble:
