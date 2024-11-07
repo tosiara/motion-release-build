@@ -11,10 +11,10 @@ on:
 jobs:
   build_amd64_ubuntu_noble:
     runs-on: ubuntu-24.04
+    env:
+      VERSION: 4.7.0
+      PLATFORM: amd64/ubuntu:noble
     steps:
       - uses: actions/checkout@v4
       - name: Run a multi-line script
-        run: |
-          export VERSION="4.7.0"
-          export PLATFORM="amd64/ubuntu:noble"
-          sudo ./entrypoint.sh
+        run: sudo ./entrypoint.sh
