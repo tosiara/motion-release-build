@@ -48,19 +48,19 @@ jobs:
           name: arm64_ubuntu_noble
           path: /debs/*.deb
           
-  amd64_ubuntu_jammy:
-    runs-on: ubuntu-22.04
-    container: amd64/ubuntu:jammy
-    env:
-      PLATFORM: amd64/ubuntu:jammy
-    steps:
-      - uses: actions/checkout@v4
-      - name: entrypoint.sh
-        run: |
-             mkdir /debs
-             ./entrypoint.sh
-      - name: Save deb
-        uses: actions/upload-artifact@v4
-        with:
-          name: amd64_ubuntu_jammy
+#  amd64_ubuntu_jammy:
+#    runs-on: ubuntu-22.04
+#    container: amd64/ubuntu:jammy
+#    env:
+#      PLATFORM: amd64/ubuntu:jammy
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: entrypoint.sh
+#        run: |
+#             mkdir /debs
+#             ./entrypoint.sh
+#      - name: Save deb
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: amd64_ubuntu_jammy
           path: /debs/*.deb
