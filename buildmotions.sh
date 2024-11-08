@@ -18,11 +18,7 @@ do
 	do
 		image="$a/$p"
 		docker pull "$image"
-		echo "docker run -v $LOCAL:/debs --env PLATFORM=$image --env VERSION=$v --env EMAIL=$email -ti $image /debs/entrypoint.sh"
-		docker run -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" -ti "$image" /debs/entrypoint.sh
+		echo "docker run -v $LOCAL:/debs --env PLATFORM=$image --env VERSION=$v --env EMAIL=$email $image /debs/entrypoint.sh"
+		docker run -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
 	done
 done
-
-sha256sum *.deb > _SHA256.txt
-gpg --sign -u "$email" _SHA256.txt
-
