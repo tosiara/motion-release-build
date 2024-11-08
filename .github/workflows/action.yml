@@ -14,10 +14,10 @@ jobs:
       - name: entrypoint.sh
         run: |
              #docker info
-             #sudo apt-get update
-             #sudo apt-get install -y binfmt-support qemu-user-static
-             #sudo docker run --platform linux/arm64/v8 registry.hub.docker.com/arm64v8/ubuntu:jammy uname -a
-             sudo -E ./buildmotions.sh
+             sudo apt-get update
+             sudo apt-get install -y binfmt-support qemu-user-static
+             sudo docker run --platform linux/arm64/v8 arm64v8/ubuntu:jammy uname -a
+             #sudo -E ./buildmotions.sh
       - name: Save debs
         uses: actions/upload-artifact@v4
         with:
