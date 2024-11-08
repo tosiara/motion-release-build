@@ -19,8 +19,6 @@ do
 	for a in $arch
 	do
 		image="registry.hub.docker.com/$a/$p"
-		#docker pull "$image"
-		echo "docker run -v $LOCAL:/debs --env PLATFORM=$image --env VERSION=$v --env EMAIL=$email $image /debs/entrypoint.sh"
 		docker run --platform linux/arm64/v8 -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
 	done
 done
