@@ -24,10 +24,10 @@ jobs:
         run: |
              docker info
              sudo -E ./buildmotions.sh
-      - name: Save deb
+      - name: Save debs
         uses: actions/upload-artifact@v4
         with:
-          name: amd64_ubuntu_noble
+          name: debs
           path: ./*.deb
 
 #  arm64_ubuntu_noble:
