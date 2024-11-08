@@ -16,37 +16,36 @@ jobs:
   amd64_ubuntu_noble:
     runs-on: ubuntu-24.04
 #    container: amd64/ubuntu:noble
-    env:
-      PLATFORM: amd64/ubuntu:noble
+#    env:
+#      PLATFORM: amd64/ubuntu:noble
     steps:
       - uses: actions/checkout@v4
       - name: entrypoint.sh
         run: |
              docker info
-             mkdir /debs
-             ./entrypoint.sh
+             sudo -E ./buildmotions.sh
       - name: Save deb
         uses: actions/upload-artifact@v4
         with:
           name: amd64_ubuntu_noble
           path: /debs/*.deb
 
-  arm64_ubuntu_noble:
-    runs-on: ubuntu-24.04
-    container: arm64v8/ubuntu:noble
-    env:
-      PLATFORM: arm64v8/ubuntu:noble
-    steps:
-      - uses: actions/checkout@v4
-      - name: entrypoint.sh
-        run: |
-             mkdir /debs
-             ./entrypoint.sh
-      - name: Save deb
-        uses: actions/upload-artifact@v4
-        with:
-          name: arm64_ubuntu_noble
-          path: /debs/*.deb
+#  arm64_ubuntu_noble:
+#    runs-on: ubuntu-24.04
+#    container: arm64v8/ubuntu:noble
+#    env:
+#      PLATFORM: arm64v8/ubuntu:noble
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: entrypoint.sh
+#        run: |
+#             mkdir /debs
+#             ./entrypoint.sh
+#      - name: Save deb
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: arm64_ubuntu_noble
+#          path: /debs/*.deb
           
 #  amd64_ubuntu_jammy:
 #    runs-on: ubuntu-22.04
