@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: amd64_ubuntu_noble
-          path: /debs/*.deb
+          path: ./*.deb
 
 #  arm64_ubuntu_noble:
 #    runs-on: ubuntu-24.04
