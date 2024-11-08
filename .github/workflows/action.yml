@@ -14,8 +14,8 @@ jobs:
       - name: entrypoint.sh
         run: |
              docker info
-             sudo docker run docker.io/arm64v8/ubuntu:jammy uname -a
-             sudo -E ./buildmotions.sh
+             sudo docker run --platform linux/arm64/v8 registry.hub.docker.com/arm64v8/ubuntu:jammy uname -a
+             #sudo -E ./buildmotions.sh
       - name: Save debs
         uses: actions/upload-artifact@v4
         with:
