@@ -18,7 +18,7 @@ for p in $platforms
 do
 	for a in $arch
 	do
-		image="$a/$p"
+		image="docker.io/$a/$p"
 		#docker pull "$image"
 		echo "docker run -v $LOCAL:/debs --env PLATFORM=$image --env VERSION=$v --env EMAIL=$email $image /debs/entrypoint.sh"
 		docker run -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
