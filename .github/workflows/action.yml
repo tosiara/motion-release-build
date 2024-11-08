@@ -1,11 +1,5 @@
 name: buildmotions.sh
 on:
-  #push:
-  #  branches: [ "main" ]
-  #pull_request:
-  #  branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
@@ -13,11 +7,8 @@ env:
   EMAIL: tosiara@users.noreply.github.com
 
 jobs:
-  amd64_ubuntu_noble:
-    runs-on: ubuntu-24.04
-#    container: amd64/ubuntu:noble
-#    env:
-#      PLATFORM: amd64/ubuntu:noble
+  buildmotions:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: entrypoint.sh
@@ -29,38 +20,3 @@ jobs:
         with:
           name: debs
           path: ./*.deb
-
-#  arm64_ubuntu_noble:
-#    runs-on: ubuntu-24.04
-#    container: arm64v8/ubuntu:noble
-#    env:
-#      PLATFORM: arm64v8/ubuntu:noble
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: entrypoint.sh
-#        run: |
-#             mkdir /debs
-#             ./entrypoint.sh
-#      - name: Save deb
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: arm64_ubuntu_noble
-#          path: /debs/*.deb
-          
-#  amd64_ubuntu_jammy:
-#    runs-on: ubuntu-22.04
-#    container: amd64/ubuntu:jammy
-#    env:
-#      PLATFORM: amd64/ubuntu:jammy
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: entrypoint.sh
-#        run: |
-#             mkdir /debs
-#             ./entrypoint.sh
-#      - name: Save deb
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: amd64_ubuntu_jammy
-#          path: /debs/*.deb
-#
