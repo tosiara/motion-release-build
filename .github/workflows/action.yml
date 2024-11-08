@@ -1,4 +1,4 @@
-name: Build motion for various architectures and distros
+name: Build
 on:
   workflow_dispatch:
 
