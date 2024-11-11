@@ -8,5 +8,5 @@ platforms="ubuntu:xenial ubuntu:bionic ubuntu:focal ubuntu:jammy ubuntu:noble de
 
 for p in $platforms
 do
-    ./buildmotion.sh "$p"
+    ./build-distro.sh "$p"
 done
