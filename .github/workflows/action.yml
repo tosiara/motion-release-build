@@ -7,14 +7,20 @@ env:
   EMAIL: tosiara@users.noreply.github.com
 
 jobs:
-  buildmotions:
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: ubuntu:jammy
-        run: sudo -E ./build-distro.sh "ubuntu:jammy"
+      - name: ubuntu
+        run: |
+            sudo -E ./build-distro.sh "ubuntu:xenial"
+            sudo -E ./build-distro.sh "ubuntu:bionic"
+            sudo -E ./build-distro.sh "ubuntu:focal"
+            sudo -E ./build-distro.sh "ubuntu:jammy"
+            sudo -E ./build-distro.sh "ubuntu:noble"
       - name: Save debs
         uses: actions/upload-artifact@v4
         with:
           name: debs
           path: ./*.deb
+  
