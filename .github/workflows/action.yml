@@ -13,6 +13,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: ubuntu
         run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "ubuntu:xenial"
             sudo -E ./build-distro.sh "ubuntu:bionic"
             sudo -E ./build-distro.sh "ubuntu:focal"
