@@ -23,7 +23,7 @@ do
    		if [ "$a" == "arm32v7" ]; then d="linux/arm32/v7"; fi
      		if [ "$a" == "arm32v5" ]; then d="linux/arm32/v5"; fi
        		if [ "$a" == "i386" ];    then d="linux/386"; fi
-	 	docker_platforms=`docker run --rm mplatform/mquery`
+	 	docker_platforms=`docker run --rm mplatform/mquery $p`
    		echo $docker_platforms
      		echo $d
 	 	if [ -z `echo $docker_platforms | grep $d` ]; then continue; fi 
