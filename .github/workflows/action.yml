@@ -23,6 +23,6 @@ jobs:
       - name: Save debs
         uses: actions/upload-artifact@v4
         with:
-          name: debs
+          name: ubuntu_debs
           path: ./*.deb
   
