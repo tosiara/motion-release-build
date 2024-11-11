@@ -23,7 +23,10 @@ do
    		if [ "$a" == "arm32v7" ]; then d="linux/arm32/v7"; fi
      		if [ "$a" == "arm32v5" ]; then d="linux/arm32/v5"; fi
        		if [ "$a" == "i386" ];    then d="linux/386"; fi
-	 	if [ -z `docker run --rm mplatform/mquery | grep $d` ]; then continue; fi 
+	 	docker_platforms=`docker run --rm mplatform/mquery`
+   		echo $docker_platforms
+     		echo $d
+	 	if [ -z `echo $docker_platforms | grep $d` ]; then continue; fi 
 		image="$a/$p"
 		docker run --platform "$d" -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
 	done
