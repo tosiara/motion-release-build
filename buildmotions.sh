@@ -1,10 +1,8 @@
 #!/bin/bash
 
 arch="amd64 i386 arm64v8 arm32v7 arm32v5"
-arch="arm32v7"
 
 platforms="ubuntu:xenial ubuntu:bionic ubuntu:focal ubuntu:jammy ubuntu:noble debian:stretch debian:buster debian:bullseye debian:bookworm debian:trixie"
-platforms="ubuntu:jammy debian:bookworm"
 # Currently build script does not support i386/ubuntu:focal because of missing libmariadbclient-dev
 
 email="tosiara@users.noreply.github.com"
