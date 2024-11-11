@@ -20,11 +20,11 @@ do
 	do
  		image="$a/$p"
    		docker_platforms=`docker run --rm mplatform/mquery $image`
- 		if [ "$a" == "amd64" ];   then is_supported=`echo $docker_platforms | grep amd64`; fi
- 		if [ "$a" == "arm64v8" ]; then is_supported=`echo $docker_platforms | grep arm64`; fi
-   		if [ "$a" == "arm32v7" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm\/v7'`; fi
-     		if [ "$a" == "arm32v5" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm\/v5'`; fi
-       		if [ "$a" == "i386" ];    then is_supported=`echo $docker_platforms | grep 386`; fi
+ 		if [ "$a" == "amd64" ];   then is_supported=`echo $docker_platforms | grep amd64`; d="$a"; fi
+ 		if [ "$a" == "arm64v8" ]; then is_supported=`echo $docker_platforms | grep arm64`; d="arm64/v8"fi
+   		if [ "$a" == "arm32v7" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm\/v7'`; d="arm/v7"; fi
+     		if [ "$a" == "arm32v5" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm\/v5'`; d="arm/v5"; fi
+       		if [ "$a" == "i386" ];    then is_supported=`echo $docker_platforms | grep 386`; d="386"; fi
 	 
 	 	echo "Target image: $image"
    		echo "Target docker platform: $d"
@@ -33,6 +33,6 @@ do
 
 	 	if [ -z "$is_supported" ]; then continue; fi
    		echo "Building..."
-		docker run --platform "$d" -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
+		docker run --platform "linux/$d" -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
 	done
 done
