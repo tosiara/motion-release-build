@@ -22,8 +22,8 @@ do
    		docker_platforms=`docker run --rm mplatform/mquery $image`
  		if [ "$a" == "amd64" ];   then is_supported=`echo $docker_platforms | grep amd64`; fi
  		if [ "$a" == "arm64v8" ]; then is_supported=`echo $docker_platforms | grep arm64`; fi
-   		if [ "$a" == "arm32v7" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm32\/v7'`; fi
-     		if [ "$a" == "arm32v5" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm32\/v5'`; fi
+   		if [ "$a" == "arm32v7" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm\/v7'`; fi
+     		if [ "$a" == "arm32v5" ]; then is_supported=`echo $docker_platforms | grep -E 'linux\/arm$|linux\/arm\/v5'`; fi
        		if [ "$a" == "i386" ];    then is_supported=`echo $docker_platforms | grep 386`; fi
 	 
 	 	echo "Target image: $image"
