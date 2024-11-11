@@ -26,3 +26,22 @@ jobs:
           name: ubuntu_debs
           path: ./*.deb
   
+  debian:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: debian
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
+            sudo -E ./build-distro.sh "debian:stretch"
+            sudo -E ./build-distro.sh "debian:buster"
+            sudo -E ./build-distro.sh "debian:bullseye"
+            sudo -E ./build-distro.sh "debian:bookworm"
+            sudo -E ./build-distro.sh "debian:trixie"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: debian_debs
+          path: ./*.deb
+  
