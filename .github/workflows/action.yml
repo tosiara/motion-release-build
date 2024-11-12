@@ -26,21 +26,63 @@ jobs:
 #          name: ubuntu_debs
 #          path: ./*.deb
   
-  debian:
+  debian-buster:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: debian
+      - name: debian-buster
         run: |
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:buster"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: debian_buster_debs
+          path: ./*.deb
+
+  debian-bullseye:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: debian-bullseye
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:bullseye"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: debian_bullseye_debs
+          path: ./*.deb
+  
+  debian-bookworm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: debian-bookworm
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:bookworm"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: debian_bookworm_debs
+          path: ./*.deb
+  
+  debian-trixie:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: debian-trixie
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:trixie"
       - name: Save debs
         uses: actions/upload-artifact@v4
         with:
-          name: debian_debs
+          name: debian_trixie_debs
           path: ./*.deb
   
