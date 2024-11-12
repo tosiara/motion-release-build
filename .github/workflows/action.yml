@@ -34,7 +34,6 @@ jobs:
         run: |
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
-            sudo -E ./build-distro.sh "debian:stretch"
             sudo -E ./build-distro.sh "debian:buster"
             sudo -E ./build-distro.sh "debian:bullseye"
             sudo -E ./build-distro.sh "debian:bookworm"
