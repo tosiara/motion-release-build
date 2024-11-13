@@ -7,20 +7,6 @@ env:
   EMAIL: tosiara@users.noreply.github.com
 
 jobs:
-  ubuntu-xenial:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: ubuntu-xenial
-        run: |
-            sudo apt-get update
-            sudo apt-get install -y binfmt-support qemu-user-static
-            sudo -E ./build-distro.sh "ubuntu:xenial"
-      - name: Save debs
-        uses: actions/upload-artifact@v4
-        with:
-          name: ubuntu_xenial_debs
-          path: ./*.deb
 
   ubuntu-bionic:
     runs-on: ubuntu-latest
