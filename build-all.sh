@@ -5,7 +5,6 @@ apt-get update
 apt-get install -y binfmt-support qemu-user-static
 
 platforms="ubuntu:bionic ubuntu:focal ubuntu:jammy ubuntu:noble debian:buster debian:bullseye debian:bookworm debian:trixie"
-# Currently build script does not support i386/ubuntu:focal because of missing libmariadbclient-dev
 
 for p in $platforms
 do
