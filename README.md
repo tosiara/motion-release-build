@@ -6,10 +6,8 @@ Docker script to build multiple motion releases
 
 * ubuntu:noble
 * ubuntu:jammy
-* ubuntu:xenial
 * ubuntu:bionic
 * ubuntu:focal
-* debian:stretch
 * debian:buster
 * debian:bullseye
 * debian:bookworm
