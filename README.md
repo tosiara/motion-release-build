@@ -11,6 +11,7 @@ Docker script to build multiple motion releases
 * debian:buster
 * debian:bullseye
 * debian:bookworm
+* debian:trixie
 
 # Supported archinectures
  
