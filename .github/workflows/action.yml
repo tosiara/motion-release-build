@@ -7,24 +7,80 @@ env:
   EMAIL: tosiara@users.noreply.github.com
 
 jobs:
-#  ubuntu:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: ubuntu
-#        run: |
-#            sudo apt-get update
-#            sudo apt-get install -y binfmt-support qemu-user-static
-#            sudo -E ./build-distro.sh "ubuntu:xenial"
-#            sudo -E ./build-distro.sh "ubuntu:bionic"
-#            sudo -E ./build-distro.sh "ubuntu:focal"
-#            sudo -E ./build-distro.sh "ubuntu:jammy"
-#            sudo -E ./build-distro.sh "ubuntu:noble"
-#      - name: Save debs
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: ubuntu_debs
-#          path: ./*.deb
+  ubuntu-xenial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ubuntu-xenial
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
+            sudo -E ./build-distro.sh "ubuntu:xenial"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu_xenial_debs
+          path: ./*.deb
+
+  ubuntu-bionic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ubuntu-bionic
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
+            sudo -E ./build-distro.sh "ubuntu:bionic"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu_bionic_debs
+          path: ./*.deb
+
+  ubuntu-focal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ubuntu-focal
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
+            sudo -E ./build-distro.sh "ubuntu:focal"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu_focal_debs
+          path: ./*.deb
+
+  ubuntu-jammy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ubuntu-jammy
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
+            sudo -E ./build-distro.sh "ubuntu:jammy"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu_jammy_debs
+          path: ./*.deb
+
+  ubuntu-noble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ubuntu-noble
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y binfmt-support qemu-user-static
+            sudo -E ./build-distro.sh "ubuntu:noble"
+      - name: Save debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu_noble_debs
+          path: ./*.deb
   
   debian-buster:
     runs-on: ubuntu-latest
