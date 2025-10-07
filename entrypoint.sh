@@ -2,7 +2,7 @@
 
 echo "Entry $VERSION $PLATFORM"
 
-if [[ "$PLATFORM" == *debian:buster ]]
+if [[ "$PLATFORM" == *debian:buster ]] || [ "$PLATFORM" == "arm32v5/debian:bullseye" ]
 then
 	sed -i 's/deb\.debian/archive\.debian/g' /etc/apt/sources.list
 fi
@@ -40,11 +40,6 @@ then
 	apt-get install -y libcamera-tools libcamera-dev libcamera-v4l2
 fi
 
-if [ "$PLATFORM" == "arm32v5/debian:bullseye" ]
-then
-	echo "Debian Bullseye armel support has been dropped due to LTS"
-	exit 0
-fi
 
 git clone https://github.com/tosiara/motion-packaging
 cd motion-packaging
