@@ -4,8 +4,7 @@ echo "Entry $VERSION $PLATFORM"
 
 if [[ "$PLATFORM" == *debian:buster ]]
 then
-	sed -i 's/^d/##d/g' /etc/apt/sources.list
-	sed -i 's/^# d/d/g' /etc/apt/sources.list
+	sed -i 's/deb\.debian/archive\.debian/g' /etc/apt/sources.list
 fi
 
 apt-get update
