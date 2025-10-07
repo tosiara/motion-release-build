@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 env:
-  VERSION: 4.7
+  VERSION: 4.7.1
   EMAIL: tosiara@users.noreply.github.com
 
 jobs:
