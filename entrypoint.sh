@@ -35,6 +35,12 @@ then
 	apt-get install -y libcamera-tools libcamera-dev libcamera-v4l2
 fi
 
+if [ "$PLATFORM" == "arm32v5/debian:bullseye" ]
+then
+	echo "Debian Bullseye armel support has been dropped due to LTS"
+	exit 1
+fi
+
 git clone https://github.com/tosiara/motion-packaging
 cd motion-packaging
 ./builddeb.sh Motion-Project "$EMAIL" "$VERSION"
