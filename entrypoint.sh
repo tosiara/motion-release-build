@@ -25,7 +25,7 @@ then
 	#apt-get install -y default-libmysqlclient-dev
 	echo "Only mariadb is supported on Ubuntu Focal i386"
 	echo "See https://github.com/Motion-Project/motion-packaging/issues/13#issuecomment-596222102"
-	exit 1
+	exit 0
 else
 	apt-get install -y libmariadbclient-dev
 fi
@@ -38,7 +38,7 @@ fi
 if [ "$PLATFORM" == "arm32v5/debian:bullseye" ]
 then
 	echo "Debian Bullseye armel support has been dropped due to LTS"
-	exit 1
+	exit 0
 fi
 
 git clone https://github.com/tosiara/motion-packaging
