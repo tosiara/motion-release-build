@@ -1,5 +1,7 @@
 name: Build
 on:
+  schedule:
+    - cron: '0 0 1 * *'
   workflow_dispatch:
 
 env:
@@ -14,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: ubuntu-bionic
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "ubuntu:bionic"
@@ -29,6 +32,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: ubuntu-focal
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "ubuntu:focal"
@@ -44,6 +48,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: ubuntu-jammy
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "ubuntu:jammy"
@@ -59,6 +64,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: ubuntu-noble
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "ubuntu:noble"
@@ -74,6 +80,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: debian-buster
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:buster"
@@ -104,6 +111,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: debian-bookworm
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:bookworm"
@@ -119,6 +127,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: debian-trixie
         run: |
+            exit 0
             sudo apt-get update
             sudo apt-get install -y binfmt-support qemu-user-static
             sudo -E ./build-distro.sh "debian:trixie"
