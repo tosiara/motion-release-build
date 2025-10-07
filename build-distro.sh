@@ -1,7 +1,6 @@
 #!/bin/bash
 
 arch="amd64 i386 arm64v8 arm32v7 arm32v5"
-arch="arm32v5"
 
 email="tosiara@users.noreply.github.com"
 LOCAL="$PWD"
