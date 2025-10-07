@@ -4,7 +4,12 @@ arch="amd64 i386 arm64v8 arm32v7 arm32v5"
 
 email="tosiara@users.noreply.github.com"
 LOCAL="$PWD"
-v="4.7"
+v="$VERSION"
+
+if [ -z "$v" ]
+then
+	v="4.7"
+fi
 
 for a in $arch
 do
@@ -26,3 +31,4 @@ do
 	docker run --platform "linux/$d" -v "$LOCAL:/debs" --env "PLATFORM=$image" --env "VERSION=$v" --env "EMAIL=$email" "$image" /debs/entrypoint.sh
 
 done
+

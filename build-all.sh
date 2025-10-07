@@ -10,3 +10,4 @@ for p in $platforms
 do
     ./build-distro.sh "$p"
 done
+
