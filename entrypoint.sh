@@ -2,11 +2,6 @@
 
 echo "Entry $VERSION $PLATFORM"
 
-if [[ "$PLATFORM" == *debian:buster ]] || [ "$PLATFORM" == "arm32v5/debian:bullseye" ]
-then
-	sed -i 's/deb\.debian/archive\.debian/g' /etc/apt/sources.list
-fi
-
 apt-get update
 if [ "$?" != "0" ]
 then
