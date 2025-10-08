@@ -5,7 +5,8 @@ echo "Entry $VERSION $PLATFORM"
 apt-get update
 if [ "$?" != "0" ]
 then
-	sed -i 's@http://deb.@http://archive.@g' /etc/apt/sources.list
+	echo "apt-get failed, maybe too old distro? trying to change to \"archive\"..."
+	sed -i 's/deb\.debian/archive\.debian/g' /etc/apt/sources.list
  	apt-get update
 fi
 DEBIAN_FRONTEND=noninteractive apt-get install -y git lsb-release build-essential pkg-config autoconf automake libtool libavcodec-dev libavdevice-dev libavformat-dev libswscale-dev libjpeg-dev libpq-dev libsqlite3-dev dpkg-dev debhelper dh-autoreconf zlib1g-dev libwebp-dev libmicrohttpd-dev gettext gnupg jq
