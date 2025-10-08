@@ -10,7 +10,6 @@ fi
 apt-get update
 if [ "$?" != "0" ]
 then
-	sed -i 's@deb.debian.org/debian-security@security.debian.org/debian-security@g' /etc/apt/sources.list
 	sed -i 's@http://deb.@http://archive.@g' /etc/apt/sources.list
  	apt-get update
 fi
