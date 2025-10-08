@@ -3,7 +3,7 @@
 echo "Entry $VERSION $PLATFORM"
 
 apt-get update
-apt-get install gnupg
+DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg
 if [ "$?" != "0" ]
 then
 	echo "apt-get failed, maybe too old distro? trying to change to \"archive\"..."
